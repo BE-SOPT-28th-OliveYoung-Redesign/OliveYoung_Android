@@ -1,9 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewActivity">
+    android:background="@color/gray_review_background"
+    tools:context=".review.ReviewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageview_back_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_arrow" />
+
+        <TextView
+            android:id="@+id/textview_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 상세 보기"
+            android:textSize="18sp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:textColor="@color/black"
+            android:layout_gravity ="center" />
+
+        <ImageView
+            android:id="@+id/imageview_shop_bag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_bag"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayout_item"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_review">
+
+        <ImageView
+            android:id="@+id/iamgeview_review_nidly"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/img_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_nidly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="니들리"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_nidly_explanation"
+            app:layout_constraintStart_toEndOf="@id/iamgeview_review_nidly"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textview_nidly_explanation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr"
+            android:text="니들리 데일리 토너 패드 60매 기획 (추가 5매 증정)"
+            android:textColor="@color/gray1"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textview_nidly"
+            app:layout_constraintTop_toBottomOf="@+id/textview_nidly" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayout_item_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@id/constraintlayout_item"
+        app:layout_constraintTop_toBottomOf="@id/constraintlayout_item">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleimage_cat"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/img_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleimage_b"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/ic_customer_label"
+            app:layout_constraintStart_toEndOf="@id/circleimage_cat"
+            app:layout_constraintTop_toTopOf="@+id/circleimage_cat" />
+
+        <TextView
+            android:id="@+id/textview_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="니은없음니은"
+            android:textColor="@color/black1"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/circleimage_b"
+            app:layout_constraintStart_toEndOf="@id/circleimage_b"
+            app:layout_constraintTop_toTopOf="@+id/circleimage_b" />
+
+        <ImageView
+            android:id="@+id/imagview_tag"
+            android:layout_width="203dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/txt_tag"
+            app:layout_constraintStart_toEndOf="@id/circleimage_cat"
+            app:layout_constraintTop_toBottomOf="@id/circleimage_b" />
+
+        <ImageView
+            android:id="@+id/imageview_border"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/divider_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/circleimage_cat" />
+
+        <ImageView
+            android:id="@+id/imageview_star"
+            android:layout_width="114dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageview_border" />
+
+
+        <TextView
+            android:id="@+id/textview_date"
+            android:layout_width="73dp"
+            android:layout_height="17dp"
+            android:layout_marginLeft="8dp"
+            android:fontFamily="@font/notosans"
+            android:text="2021.05.01"
+            android:textColor="@color/gray2"
+            app:layout_constraintBottom_toBottomOf="@+id/imageview_star"
+            app:layout_constraintStart_toEndOf="@id/imageview_star"
+            app:layout_constraintTop_toTopOf="@+id/imageview_star" />
+
+        <ImageView
+            android:id="@+id/imageview_type"
+            android:layout_width="72dp"
+            android:layout_height="83dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/txt_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageview_star" />
+
+        <TextView
+            android:id="@+id/textview_type_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:fontFamily="@font/notosanskr"
+            android:text="복합성에 좋아요"
+            android:textColor="@color/black1"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@id/imageview_type"
+            app:layout_constraintTop_toTopOf="@id/imageview_type" />
+
+        <TextView
+            android:id="@+id/textview_type_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanskr"
+            android:text="주름/미백에 좋아요"
+            android:textColor="@color/black1"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@id/imageview_type"
+            app:layout_constraintTop_toBottomOf="@id/textview_type_one" />
+
+        <TextView
+            android:id="@+id/textview_type_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanskr"
+            android:text="보통이에요"
+            android:textColor="@color/black1"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@id/imageview_type"
+            app:layout_constraintTop_toBottomOf="@id/textview_type_two" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_product"
+            android:layout_width="match_parent"
+            android:layout_height="104dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_cosmetic"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/imageview_type" />
+
+        <TextView
+            android:id="@+id/textview_review_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosanskr"
+            android:paddingHorizontal="20dp"
+            android:text="@string/product_review"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerview_product" />
+
+        <TextView
+            android:id="@+id/textview_help_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/notosanskr_bold"
+            android:text="이 리뷰가 도움이 돼요!"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_review_item" />
+
+        <Button
+            android:id="@+id/imgaebutton_help_review"
+            android:layout_width="52dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/imagebutton_states"
+            android:drawableLeft="@drawable/imagebutton_icons"
+            android:text="66"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textview_help_review"
+            app:layout_constraintStart_toEndOf="@id/textview_help_review"
+            app:layout_constraintTop_toTopOf="@+id/textview_help_review" />
+
+        <TextView
+            android:id="@+id/textview_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:text="신고하기"
+            android:textColor="@color/gray3"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgaebutton_help_review"
+            app:layout_constraintStart_toEndOf="@id/imgaebutton_help_review"
+            app:layout_constraintTop_toTopOf="@+id/imgaebutton_help_review" />
+
+        <ImageView
+            android:id="@+id/imageview_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_report"
+            android:layout_marginLeft="2dp"
+            app:layout_constraintStart_toEndOf="@id/textview_alert"
+            app:layout_constraintTop_toTopOf="@id/textview_alert"
+            app:layout_constraintBottom_toBottomOf="@id/textview_alert"/>
+
+        <ImageView
+            android:id="@+id/divider_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/divider_bottom"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/textview_help_review"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageview_bottom_page"
+        android:layout_width="match_parent"
+        android:layout_height="326dp"
+        android:background="@drawable/footer_bottom"
+        app:layout_constraintTop_toBottomOf="@id/constraintlayout_item_review"
+        app:layout_constraintStart_toStartOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</layout>

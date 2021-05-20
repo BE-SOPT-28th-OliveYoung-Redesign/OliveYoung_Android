@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DesignClient_OliveYoung">
-        <activity android:name=".ReviewActivity"></activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".review.ReviewActivity">
+        </activity>
+        <activity android:name=".home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
