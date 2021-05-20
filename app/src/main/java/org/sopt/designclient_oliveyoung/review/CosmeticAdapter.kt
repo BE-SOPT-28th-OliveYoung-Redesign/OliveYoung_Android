@@ -27,6 +27,8 @@ class CosmeticAdapter : RecyclerView.Adapter<CosmeticAdapter.CosmeticViewHolder>
 
     class CosmeticViewHolder(val binding : ItemCosmeticBinding):
             RecyclerView.ViewHolder(binding.root){
-                fun bind(cosmeticData: CosmeticData){}
+                fun bind(cosmeticData: CosmeticData){
+                    binding.imageviewCosmetic.setImageResource(cosmeticData.image_cosmetic)
+                }
             }
 }

@@ -3,19 +3,28 @@ package org.sopt.designclient_oliveyoung.review
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.CheckBox
+import android.widget.CompoundButton
+import androidx.activity.viewModels
+import org.sopt.designclient_oliveyoung.R
 import org.sopt.designclient_oliveyoung.databinding.ActivityReviewBinding
 import org.sopt.designclient_oliveyoung.home.HomeActivity
 
 class ReviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReviewBinding
     private lateinit var cosmeticAdapter: CosmeticAdapter
+    private val viewModel by viewModels<ReviewViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
         startCosmeticAdapter()
         returnMainActivity()
+        updateLikeCounts()
     }
 
     fun startCosmeticAdapter(){
@@ -23,18 +32,18 @@ class ReviewActivity : AppCompatActivity() {
         binding.recyclerviewProduct.adapter = cosmeticAdapter
 
         cosmeticAdapter.cosmeticList.addAll(
-                mutableListOf<CosmeticData>(
+                mutableListOf(
                         CosmeticData(
-                                image_cosmetic = "@drawable/cos_one"
+                                image_cosmetic = R.drawable.cos_one
                         ),
                         CosmeticData(
-                                image_cosmetic = "@drawable/cos_two"
+                                image_cosmetic = R.drawable.cos_two
                         ),
                         CosmeticData(
-                                image_cosmetic = "@drawable/cos_three"
+                                image_cosmetic = R.drawable.cos_three
                         ),
                         CosmeticData(
-                                image_cosmetic = "@drawable/cos_one"
+                                image_cosmetic = R.drawable.cos_one
                         )
                 )
         )
@@ -47,6 +56,16 @@ class ReviewActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
 
+        }
+    }
+
+    fun updateLikeCounts(){
+        binding.imgaebuttonHelpReview.setOnCheckedChangeListener { button, isChecked ->
+            if (isChecked) {
+                viewModel.plusLikeCount()
+            } else {
+                viewModel.minusLikeCount()
+            }
         }
     }
 

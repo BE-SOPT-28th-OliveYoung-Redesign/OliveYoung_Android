@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="org.sopt.designclient_oliveyoung.review.ReviewViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -91,7 +97,7 @@
             android:id="@+id/textview_nidly_explanation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosanskr"
+            android:fontFamily="@font/notosanskr_bold"
             android:text="니들리 데일리 토너 패드 60매 기획 (추가 5매 증정)"
             android:textColor="@color/gray1"
             android:textSize="12sp"
@@ -179,7 +185,7 @@
             android:layout_width="73dp"
             android:layout_height="17dp"
             android:layout_marginLeft="8dp"
-            android:fontFamily="@font/notosans"
+            android:fontFamily="@font/notosans_regular"
             android:text="2021.05.01"
             android:textColor="@color/gray2"
             app:layout_constraintBottom_toBottomOf="@+id/imageview_star"
@@ -201,7 +207,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:fontFamily="@font/notosanskr"
+            android:fontFamily="@font/notosanskr_regular"
             android:text="복합성에 좋아요"
             android:textColor="@color/black1"
             android:textSize="8sp"
@@ -214,7 +220,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="6dp"
-            android:fontFamily="@font/notosanskr"
+            android:fontFamily="@font/notosanskr_regular"
             android:text="주름/미백에 좋아요"
             android:textColor="@color/black1"
             android:textSize="8sp"
@@ -227,7 +233,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="6dp"
-            android:fontFamily="@font/notosanskr"
+            android:fontFamily="@font/notosanskr_regular"
             android:text="보통이에요"
             android:textColor="@color/black1"
             android:textSize="8sp"
@@ -249,7 +255,7 @@
             android:id="@+id/textview_review_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosanskr"
+            android:fontFamily="@font/notosanskr_regular"
             android:paddingHorizontal="20dp"
             android:text="@string/product_review"
             android:textSize="12sp"
@@ -270,18 +276,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textview_review_item" />
 
-        <Button
+        <CheckBox
             android:id="@+id/imgaebutton_help_review"
             android:layout_width="52dp"
             android:layout_height="23dp"
             android:layout_marginLeft="2dp"
             android:background="@drawable/imagebutton_states"
             android:drawableLeft="@drawable/imagebutton_icons"
-            android:text="66"
+            android:text="@{Integer.toString(viewModel.likeCount)}"
+            android:gravity="center"
+            android:textColor="@color/selector_checkbox_text"
+            android:button="@null"
             android:textSize="12sp"
+            android:drawablePadding="-8dp"
             app:layout_constraintBottom_toBottomOf="@+id/textview_help_review"
             app:layout_constraintStart_toEndOf="@id/textview_help_review"
-            app:layout_constraintTop_toTopOf="@+id/textview_help_review" />
+            app:layout_constraintTop_toTopOf="@+id/textview_help_review"
+            android:paddingLeft="12dp" />
 
         <TextView
             android:id="@+id/textview_alert"

@@ -1,5 +1,5 @@
 package org.sopt.designclient_oliveyoung.review
 
 data class CosmeticData(
-        val image_cosmetic: String
+        val image_cosmetic: Int
 )

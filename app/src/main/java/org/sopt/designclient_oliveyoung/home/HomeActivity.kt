@@ -17,6 +17,16 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         showCosmeticItemReview()
+
+        binding.tablayoutHomeCategory.apply {
+            addTab(this.newTab().setText("홈"))
+            addTab(this.newTab().setText("오특"))
+            addTab(this.newTab().setText("신상"))
+            addTab(this.newTab().setText("랭킹"))
+            addTab(this.newTab().setText("기획전"))
+            addTab(this.newTab().setText("이벤트"))
+
+        }
     }
 
     fun showCosmeticItemReview(){
@@ -25,6 +35,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.imageviewItemThird.setOnClickListener (this)
         binding.imageviewItemFourth.setOnClickListener (this)
         binding.imageviewItemFive.setOnClickListener (this)
+
+
 
     }
 
