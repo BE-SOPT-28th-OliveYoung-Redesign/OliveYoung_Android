@@ -1,10 +1,9 @@
-package org.sopt.designclient_oliveyoung.home
+package org.sopt.designclient_oliveyoung.home.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.google.android.material.tabs.TabLayout
 import org.sopt.designclient_oliveyoung.databinding.ActivityHomeBinding
 import org.sopt.designclient_oliveyoung.review.ReviewActivity
 

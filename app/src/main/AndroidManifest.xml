@@ -11,7 +11,7 @@
         android:theme="@style/Theme.DesignClient_OliveYoung">
         <activity android:name=".review.ReviewActivity">
         </activity>
-        <activity android:name=".home.HomeActivity">
+        <activity android:name=".home.view.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -3,12 +3,10 @@ package org.sopt.designclient_oliveyoung.review
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.CheckBox
-import android.widget.CompoundButton
 import androidx.activity.viewModels
 import org.sopt.designclient_oliveyoung.R
 import org.sopt.designclient_oliveyoung.databinding.ActivityReviewBinding
-import org.sopt.designclient_oliveyoung.home.HomeActivity
+import org.sopt.designclient_oliveyoung.home.view.HomeActivity
 
 class ReviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReviewBinding
