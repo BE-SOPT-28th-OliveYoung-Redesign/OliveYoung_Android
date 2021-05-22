@@ -16,4 +16,7 @@
     <color name="gray3">#BEBEBE</color>
     <color name="gray4">#DDDDDD</color>
     <color name="green">#A5CC49</color>
+    <color name ="gray_review_background">#EEEEEE</color>
+    <color name ="gray_5">#666666</color>
+    <color name="gray_6">#888888</color>
 </resources>
