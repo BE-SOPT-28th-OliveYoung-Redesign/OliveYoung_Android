@@ -282,17 +282,18 @@
             android:layout_height="23dp"
             android:layout_marginLeft="2dp"
             android:background="@drawable/imagebutton_states"
-            android:drawableLeft="@drawable/imagebutton_icons"
-            android:text="@{Integer.toString(viewModel.likeCount)}"
-            android:gravity="center"
-            android:textColor="@color/selector_checkbox_text"
             android:button="@null"
-            android:textSize="12sp"
+            android:drawableLeft="@drawable/imagebutton_icons"
             android:drawablePadding="-8dp"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:text="@{Integer.toString(viewModel.likeCount)}"
+            android:textColor="@color/selector_checkbox_text"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/textview_help_review"
             app:layout_constraintStart_toEndOf="@id/textview_help_review"
             app:layout_constraintTop_toTopOf="@+id/textview_help_review"
-            android:paddingLeft="12dp" />
+            app:layout_constraintVertical_bias="0.583" />
 
         <TextView
             android:id="@+id/textview_alert"
