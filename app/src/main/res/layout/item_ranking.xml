@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/img_item_ranking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toTopOf="@id/constraintlayout_item_ranking"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/img_sample_ranking" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout_item_ranking"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/img_item_ranking"
+            app:layout_constraintStart_toStartOf="@id/img_item_ranking"
+            app:layout_constraintTop_toBottomOf="@id/img_item_ranking">
+
+            <TextView
+                android:id="@+id/text_ranking_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{item.brandLabel}"
+                android:textColor="@color/black2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="에뛰드" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:background="@drawable/ic_line_black2"
+                app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
+                app:layout_constraintStart_toEndOf="@id/text_ranking_title"
+                app:layout_constraintTop_toTopOf="@id/text_ranking_title" />
+
+            <TextView
+                android:id="@+id/text_ranking_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:includeFontPadding="false"
+                android:text="@{item.listLabel}"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
+                app:layout_constraintStart_toEndOf="@id/text_ranking_title"
+                app:layout_constraintTop_toTopOf="@id/text_ranking_title"
+                tools:text="픽싱틴트" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@{item.reviewLabel}"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_ranking_brand"
+                tools:text="매트매트하고 누디뉴디한 찐 진저밀크티 컬러 픽싱틴트! 베이스로도 좋지만 메인컬러로 사용하기 위해 구매했고... " />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <data>
+
+        <variable
+            name="item"
+            type="org.sopt.designclient_oliveyoung.home.view.RankingResponse.Data" />
+    </data>
+</layout>

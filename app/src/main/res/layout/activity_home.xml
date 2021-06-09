@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -32,15 +31,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/toolbar_home" />
 
-
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayout_home_category"
+                style="@style/Tablayout.Appearance"
                 android:layout_width="match_parent"
                 android:layout_height="42dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageview_topbar"
                 app:tabIndicatorColor="@color/red"
-                style="@style/Tablayout.Appearance"
                 app:tabTextColor="@color/selector_tablayout_text">
 
             </com.google.android.material.tabs.TabLayout>
@@ -49,26 +47,29 @@
                 android:id="@+id/tablayout_home_sub"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                app:tabIndicator="@null"
-                app:tabBackground="@drawable/tab_background_selector"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tablayout_home_category"
+                app:tabBackground="@drawable/tab_background_selector"
                 app:tabGravity="fill"
+                app:tabIndicator="@null"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/white"
-                app:tabTextColor="@color/gray_5" >
+                app:tabTextColor="@color/gray_5">
+
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="120dp"
                     android:layout_height="50dp"
-                    android:text="판매랭킹"/>
+                    android:text="판매랭킹" />
+
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="120dp"
                     android:layout_height="50dp"
-                    android:text="리뷰 베스트"/>
+                    android:text="리뷰 베스트" />
+
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="120dp"
                     android:layout_height="50dp"
-                    android:text="실시간랭킹"/>
+                    android:text="실시간랭킹" />
             </com.google.android.material.tabs.TabLayout>
 
             <TextView
@@ -99,11 +100,11 @@
                 android:layout_height="wrap_content"
                 android:text="베스트"
                 android:textColor="@color/mint"
+                android:theme="@style/Platform.MaterialComponents.Light"
+                app:checkedIconEnabled="true"
+                app:chipBackgroundColor="@color/white"
                 app:chipStrokeColor="@color/mint"
                 app:chipStrokeWidth="2dp"
-                app:chipBackgroundColor="@color/white"
-                app:checkedIconEnabled="true"
-                android:theme="@style/Platform.MaterialComponents.Light"
                 app:layout_constraintStart_toStartOf="@+id/textview_today_review"
                 app:layout_constraintTop_toBottomOf="@id/textview_today_review" />
 
@@ -113,11 +114,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="더모코스메틱"
-                app:chipStrokeWidth="2dp"
-                app:chipStrokeColor="@color/gray_6"
                 android:textColor="@color/gray_6"
-                app:chipBackgroundColor="@color/white"
                 android:theme="@style/Platform.MaterialComponents.Light"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeColor="@color/gray_6"
+                app:chipStrokeWidth="2dp"
                 app:layout_constraintStart_toEndOf="@id/chip_best"
                 app:layout_constraintTop_toBottomOf="@id/textview_today_review" />
 
@@ -127,11 +128,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="스킨케어"
-                app:chipStrokeWidth="2dp"
-                app:chipStrokeColor="@color/gray_6"
                 android:textColor="@color/gray_6"
-                app:chipBackgroundColor="@color/white"
                 android:theme="@style/Platform.MaterialComponents.Light"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeColor="@color/gray_6"
+                app:chipStrokeWidth="2dp"
                 app:layout_constraintStart_toEndOf="@id/chip_themore"
                 app:layout_constraintTop_toBottomOf="@id/textview_today_review" />
 
@@ -141,11 +142,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="바디케어"
-                app:chipStrokeWidth="2dp"
-                app:chipStrokeColor="@color/gray_6"
                 android:textColor="@color/gray_6"
-                app:chipBackgroundColor="@color/white"
                 android:theme="@style/Platform.MaterialComponents.Light"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeColor="@color/gray_6"
+                app:chipStrokeWidth="2dp"
                 app:layout_constraintStart_toEndOf="@id/chip_skincare"
                 app:layout_constraintTop_toBottomOf="@id/textview_today_review" />
 
@@ -155,108 +156,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:text="헤어케어"
-                app:chipStrokeWidth="2dp"
-                app:chipStrokeColor="@color/gray_6"
                 android:textColor="@color/gray_6"
-                app:chipBackgroundColor="@color/white"
                 android:theme="@style/Platform.MaterialComponents.Light"
+                app:chipBackgroundColor="@color/white"
+                app:chipStrokeColor="@color/gray_6"
+                app:chipStrokeWidth="2dp"
                 app:layout_constraintStart_toEndOf="@id/chip_bodycare"
                 app:layout_constraintTop_toBottomOf="@id/textview_today_review" />
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constaintlayout_home_reviewer"
-                android:layout_width="match_parent"
-                android:layout_height="243dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/gray_review_background"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/chip_bodycare">
-
-                <ImageView
-                    android:id="@+id/imageview_home_reviewer"
-                    android:layout_width="180dp"
-                    android:layout_height="227dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/banner1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageview_item_first"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageview_item_first"
-                    android:layout_width="180dp"
-                    android:layout_height="227dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="7dp"
-                    android:background="@drawable/card1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageview_home_reviewer"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <ImageView
-                android:id="@+id/imageview_item_two"
-                android:layout_width="180dp"
-                android:layout_height="227dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/card2"
-                app:layout_constraintEnd_toStartOf="@+id/imageview_item_third"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/constaintlayout_home_reviewer" />
-
-            <ImageView
-                android:id="@+id/imageview_item_third"
-                android:layout_width="180dp"
-                android:layout_height="227dp"
-                android:layout_marginLeft="7dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/card3"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_ranking"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageview_item_two"
-                app:layout_constraintTop_toBottomOf="@id/constaintlayout_home_reviewer" />
-
-            <ImageView
-                android:id="@+id/imageview_item_fourth"
-                android:layout_width="180dp"
-                android:layout_height="227dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/card4"
-                app:layout_constraintEnd_toStartOf="@+id/imageview_item_five"
-                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageview_item_two" />
-
-            <ImageView
-                android:id="@+id/imageview_item_five"
-                android:layout_width="180dp"
-                android:layout_height="227dp"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/card5"
-                android:layout_marginLeft="7dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageview_item_fourth"
-                app:layout_constraintTop_toBottomOf="@id/imageview_item_third" />
+                app:layout_constraintTop_toBottomOf="@id/chip_haircare"
+                tools:listitem="@layout/item_ranking"
+                tools:itemCount="6"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                />
 
             <ImageView
                 android:id="@+id/footer_bottom_home"
                 android:layout_width="match_parent"
                 android:layout_height="326dp"
-                android:background="@drawable/footer_bottom"
                 android:layout_marginTop="20dp"
-                app:layout_constraintTop_toBottomOf="@id/imageview_item_fourth"
-                app:layout_constraintStart_toStartOf="parent"/>
-
+                android:background="@drawable/footer_bottom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerview_ranking" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>
-
-
-
-
