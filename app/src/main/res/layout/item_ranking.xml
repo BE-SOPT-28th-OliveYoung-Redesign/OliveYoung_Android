@@ -5,80 +5,96 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
-
-        <ImageView
-            android:id="@+id/img_item_ranking"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toTopOf="@id/constraintlayout_item_ranking"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/img_sample_ranking" />
+        android:layout_height="320dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintlayout_item_ranking"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:paddingBottom="20dp"
+            android:layout_margin="2dp"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/img_item_ranking"
-            app:layout_constraintStart_toStartOf="@id/img_item_ranking"
-            app:layout_constraintTop_toBottomOf="@id/img_item_ranking">
-
-            <TextView
-                android:id="@+id/text_ranking_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:text="@{item.brandLabel}"
-                android:textColor="@color/black2"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="에뛰드" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:background="@drawable/ic_line_black2"
-                app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
-                app:layout_constraintStart_toEndOf="@id/text_ranking_title"
-                app:layout_constraintTop_toTopOf="@id/text_ranking_title" />
-
-            <TextView
-                android:id="@+id/text_ranking_brand"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:includeFontPadding="false"
-                android:text="@{item.listLabel}"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
-                app:layout_constraintStart_toEndOf="@id/text_ranking_title"
-                app:layout_constraintTop_toTopOf="@id/text_ranking_title"
-                tools:text="픽싱틴트" />
-
-            <TextView
+                android:id="@+id/img_item_ranking"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:includeFontPadding="false"
-                android:text="@{item.reviewLabel}"
-                android:textSize="12sp"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toTopOf="@id/constraintlayout_item_ranking"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_ranking_brand"
-                tools:text="매트매트하고 누디뉴디한 찐 진저밀크티 컬러 픽싱틴트! 베이스로도 좋지만 메인컬러로 사용하기 위해 구매했고... " />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/img_sample_ranking" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintlayout_item_ranking"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/img_item_ranking"
+                app:layout_constraintStart_toStartOf="@id/img_item_ranking"
+                app:layout_constraintTop_toBottomOf="@id/img_item_ranking">
+
+                <TextView
+                    android:id="@+id/text_ranking_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@{item.brandLabel}"
+                    android:textColor="@color/black2"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="에뛰드" />
+
+                <ImageView
+                    android:id="@+id/img_text_ranking_divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/ic_line_black2"
+                    app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
+                    app:layout_constraintStart_toEndOf="@id/text_ranking_title"
+                    app:layout_constraintTop_toTopOf="@id/text_ranking_title" />
+
+                <TextView
+                    android:id="@+id/text_ranking_brand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:includeFontPadding="false"
+                    android:text="@{item.listLabel}"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
+                    app:layout_constraintStart_toEndOf="@id/text_ranking_title"
+                    app:layout_constraintTop_toTopOf="@id/text_ranking_title"
+                    tools:text="픽싱틴트" />
+
+                <TextView
+                    android:id="@+id/text_ranking_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@{item.reviewLabel}"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_ranking_brand"
+                    tools:text="매트매트하고 누디뉴디한 찐 진저밀크티 컬러 픽싱틴트! 베이스로도 좋지만 메인컬러로 사용하기 위해 구매했고... " />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
