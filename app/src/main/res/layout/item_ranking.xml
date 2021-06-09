@@ -5,14 +5,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="280dp"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:paddingBottom="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_margin="4dp"
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,9 +34,8 @@
                 android:id="@+id/constraintlayout_item_ranking"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:paddingHorizontal="5dp"
-                android:paddingVertical="10dp"
+                android:background="@drawable/rect_border_gray"
+                android:padding="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/img_item_ranking"
                 app:layout_constraintStart_toStartOf="@id/img_item_ranking"
@@ -49,7 +48,7 @@
                     android:includeFontPadding="false"
                     android:text="@{item.brandLabel}"
                     android:textColor="@color/black2"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="에뛰드" />
@@ -74,7 +73,7 @@
                     android:includeFontPadding="false"
                     android:text="@{item.listLabel}"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@id/text_ranking_title"
                     app:layout_constraintStart_toEndOf="@id/text_ranking_title"
@@ -85,6 +84,7 @@
                     android:id="@+id/text_ranking_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:includeFontPadding="false"
                     android:text="@{item.reviewLabel}"
                     android:textSize="12sp"
@@ -92,7 +92,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/text_ranking_brand"
-                    tools:text="매트매트하고 누디뉴디한 찐 진저밀크티 컬러 픽싱틴트! 베이스로도 좋지만 메인컬러로 사용하기 위해 구매했고... " />
+                    tools:text="이 제품은 1등 제품입니다" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -166,7 +166,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="270dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/gray4"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -178,8 +178,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:paddingHorizontal="7dp"
-                android:paddingVertical="10dp"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="12dp"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
